@@ -14,3 +14,8 @@ function avergae(arr) {
     return sum / arr.length;
   }
 }
+
+function addN() {
+  nums.push(randRange(min, max));
+  means.push(average(nums));
+}
