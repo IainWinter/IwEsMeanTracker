@@ -26,3 +26,10 @@ h1, p {
     border: none;
     border-bottom: 1px solid black;
 }
+
+.table {
+  display: flex;
+  flex-direction: column;
+  border-style: solid;
+  border-width: 1px;
+}
