@@ -28,8 +28,6 @@ h1, p {
 }
 
 .table {
-  display: flex;
-  flex-direction: column;
   border-style: solid;
   border-width: 1px;
 }

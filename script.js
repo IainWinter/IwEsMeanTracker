@@ -1,5 +1,6 @@
 nums = [];
 means = [];
+let table = document.getElementById("table");
 
 function randRange(lower, upper) { // inclusive - uninclusive
   return Math.floor(Math.random() * (upper - lower)) + lower
