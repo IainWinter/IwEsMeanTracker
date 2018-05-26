@@ -27,6 +27,9 @@ h1, p {
     border-bottom: 1px solid black;
 }
 
-#table {
-  
+.table {
+  display: flex;
+  flex-direction: column;
+  border-style: solid;
+  border-width: 1px;
 }
