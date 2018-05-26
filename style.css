@@ -11,3 +11,16 @@ h1, p {
     margin: auto;
     text-align: center;
 }
+
+.form {
+    display: flex;
+    justify-content: space-between;
+    width: 60%;
+    margin: auto;
+}
+
+.form .input {
+    width: 30%;
+    border: none;
+    border-bottom: 1px solid black;
+}
