@@ -17,7 +17,7 @@ function avergae(arr) {
 
 function start() {
   min = document.getElementById("min").value;
-  min = document.getElementById("max").value;
+  max = document.getElementById("max").value;
   console.log(min, max);
 }
 
