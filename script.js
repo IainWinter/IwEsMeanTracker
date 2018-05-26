@@ -15,6 +15,10 @@ function avergae(arr) {
   }
 }
 
+function input(e) {
+  if (e.key == " ") start();
+}
+
 function start() {
   min = document.getElementById("min").value;
   max = document.getElementById("max").value;
