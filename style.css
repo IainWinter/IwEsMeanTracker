@@ -1,0 +1,13 @@
+html, body {
+    font-family: 'Slabo 27px', Arial;
+}
+
+h1, p {
+    margin: 0;
+}
+
+.center {
+    width: 50%;
+    margin: auto;
+    text-align: center;
+}
