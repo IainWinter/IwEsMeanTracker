@@ -1,11 +1,19 @@
-nums = [];
-means = [];
+let nums = [];
+let means = [];
+let minId, maxId, table, i;
 
-function randRange(lower, upper) { // inclusive - uninclusive
+$(function() {
+    minId = $("#min");
+    maxId = $("#max");
+    table = $("#table");
+    i = 0;
+});
+
+function randRange(lower, upper) {
   return Math.floor(Math.random() * (upper - lower)) + lower
 }
 
-function avergae(arr) {
+function average(arr) {
   if(arr.length > 0) {
     let sum = 0;
     for (let i = 0; i < arr.length; i++) {
@@ -16,9 +24,17 @@ function avergae(arr) {
 }
 
 function start() {
-  min = document.getElementById("min").value;
-  max = document.getElementById("max").value;
-  console.log(min, max);
+  min = parseInt(minId.val());
+  max = parseInt(maxId.val());
+  let n;
+  for (n = i; n < i + 100; n++) {
+    addN();
+    table.append("<tr><td>"+ n + "</td><td>"+ nums[n] + "</td><td>"+ means[n].toFixed(3) + "</td></tr>");
+  }
+  i = n;
+
+  console.log(nums);
+  console.log(means);
 }
 
 function addN() {

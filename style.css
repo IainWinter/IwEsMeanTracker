@@ -30,4 +30,11 @@ h1, p {
 .displays {
     display: flex;
     justify-content: space-between;
+    width: 60%;
+    margin: 50px auto auto auto;
+}
+
+.displays table {
+    width: 35%;
+    text-align: left;
 }

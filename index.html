@@ -2,6 +2,7 @@
 <html>
 <head>
     <title>IwEsMeanTracker</title>
+    <meta charset="utf-8"/>
     <link href="https://fonts.googleapis.com/css?family=Slabo+27px" rel="stylesheet">
     <link href="style.css" rel="stylesheet" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -13,31 +14,17 @@
             <h1>Mean Tracker</h1>
             <p>By: Iain Winter & Eli Bildman</p>
         </div>
-        <form id="minMax" class="form">
+        <form id="minMax" class="form" onsubmit="start(); event.preventDefault();">
             <input id="min" class="input" placeholder="min">
             <input id="max" class="input" placeholder="max">
+            <input type="submit" value="Temp button">
         </form>
         <div class="displays">
-            <table>
+            <table id="table">
                 <tr>
-                    <th>Firstname</th>
-                    <th>Lastname</th>
-                    <th>Age</th>
-                </tr>
-                <tr>
-                    <td>Jill</td>
-                    <td>Smith</td>
-                    <td>50</td>
-                </tr>
-                <tr>
-                    <td>Eve</td>
-                    <td>Jackson</td>
-                    <td>94</td>
-                </tr>
-                <tr>
-                    <td>John</td>
-                    <td>Doe</td>
-                    <td>80</td>
+                    <th>N</th>
+                    <th>Random</th>
+                    <th>Mean</th>
                 </tr>
             </table>
         </div>
