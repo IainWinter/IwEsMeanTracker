@@ -1,11 +1,12 @@
 let nums = [];
 let means = [];
-let minId, maxId, table, canvas, ctx, i;
+let minId, maxId, table, tableWrap, canvas, ctx, i;
 
 $(function() {
     minId = $("#min");
     maxId = $("#max");
     table = $("#table");
+    tableWrap = $("#tableWrap");
     canvas = $("#canvas")[0];
     ctx = canvas.getContext('2d');
     i = 0;
@@ -26,8 +27,8 @@ function average(arr) {
 }
 
 $(window).scroll(function() {
-   if($(window).scrollTop() + $(window).height() == $(document).height()) {
-     more_n(1);
+   if($(window).scrollTop() + $(window).height() > $(document).height() - 100) {
+     more_n(100);
    }
 });
 
@@ -50,6 +51,8 @@ function more_n(how_many) {
 
   canvas.style.width = max + "px";
   canvas.style.height = i + 100 + "px";
+
+  table.html("<tr><th>N</th><th>Random</th><th>Mean</th></tr>");
 
   let n;
   for (n = i; n < i + how_many; n++) {

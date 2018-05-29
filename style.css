@@ -43,3 +43,8 @@ h1, p {
     display: block;
     max-width: 100%;
 }
+
+.tabelWrap {
+    height: 750px;
+    overflow-y: scroll;
+}
