@@ -38,3 +38,8 @@ h1, p {
     width: 35%;
     text-align: left;
 }
+
+.displays canvas {
+    display: block;
+    max-width: 100%;
+}
