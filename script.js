@@ -2,6 +2,7 @@ let nums = [];
 let means = [];
 let minId, maxId, table, tableWrap, canvas, ctx, i;
 
+
 $(function() {
     minId = $("#min");
     maxId = $("#max");
@@ -9,7 +10,6 @@ $(function() {
     tableWrap = $("#tableWrap");
     canvas = $("#canvas")[0];
     ctx = canvas.getContext('2d');
-    i = 0;
 });
 
 function randRange(lower, upper) {
@@ -28,47 +28,43 @@ function average(arr) {
 
 $(window).scroll(function() {
    if($(window).scrollTop() + $(window).height() > $(document).height() - 100) {
-     more_n(100);
+     more_n(1);
    }
 });
+
+function start() {
+  min = parseInt(minId.val());
+  max = parseInt(maxId.val());
+  canvas.height = 0;
+  canvas.width = max - min;
+  more_n(Math.floor((window.innerHeight - 157) / 22 + 1));
+}
 
 function more_n(how_many) {
   min = parseInt(minId.val());
   max = parseInt(maxId.val());
-
-  let hehexdCanvas;
-  if(i != 0) {
-    hehexdCanvas = createCanvas(canvas.width, canvas.height);
-    hehexdCanvas.getContext('2d').drawImage(canvas, 0, 0);
-  }
-
-  canvas.setAttribute("width", max);
-  canvas.setAttribute("height", i + 100);
-
-  if(i != 0) {
-    ctx.drawImage(hehexdCanvas, 0, 0);
-  }
-
-  canvas.style.width = max + "px";
-  canvas.style.height = i + 100 + "px";
-
+  canvas.height += how_many * 22;
   table.html("<tr><th>N</th><th>Random</th><th>Mean</th></tr>");
-
-  let n;
-  for (n = i; n < i + how_many; n++) {
+  for (i = 0; i < how_many; i++) {
     addN();
-    table.append("<tr><td>"+ n + "</td><td>"+ nums[n] + "</td><td>"+ means[n].toFixed(3) + "</td></tr>");
-    ctx.fillRect(means[n], n, 1, 1);
-    ctx.fillRect((min + max) / 2, n, 1, 1)
+  }
+  console.log(means.length);
+  for (i = 0; i < means.length; i++) {
+    table.append("<tr><td>"+ i + "</td><td>"+ nums[i] + "</td><td>"+ means[i].toFixed(3) + "</td></tr>");
+    ctx.fillStyle = "#808080";
+    ctx.fillRect(Math.floor((min + max) / 2 - min) + 7, i * 22, 1, 22);
+    ctx.fillStyle = "#000000";
+
+    ctx.fillRect(Math.floor(means[i] - min), i * 22, 14, 14);
   }
 
-  i = n;
+  i += how_many;
 
-  console.log(nums);
-  console.log(means);
 }
 
 function addN() {
+  min = parseInt(minId.val());
+  max = parseInt(maxId.val());
   nums.push(randRange(min, max));
   means.push(average(nums));
 }
