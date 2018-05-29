@@ -25,7 +25,13 @@ function average(arr) {
   }
 }
 
-function start() {
+$(window).scroll(function() {
+   if($(window).scrollTop() + $(window).height() == $(document).height()) {
+     more_n(1);
+   }
+});
+
+function more_n(how_many) {
   min = parseInt(minId.val());
   max = parseInt(maxId.val());
 
@@ -46,7 +52,7 @@ function start() {
   canvas.style.height = i + 100 + "px";
 
   let n;
-  for (n = i; n < i + 100; n++) {
+  for (n = i; n < i + how_many; n++) {
     addN();
     table.append("<tr><td>"+ n + "</td><td>"+ nums[n] + "</td><td>"+ means[n].toFixed(3) + "</td></tr>");
     ctx.fillRect(means[n], n, 1, 1);
